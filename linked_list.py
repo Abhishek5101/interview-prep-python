@@ -24,10 +24,18 @@ class LinkedList:
 		count = 0
 		current = self.head
 		while current.next is not None:
-			current = current.next
 			count += 1
+			current = current.next
 		return count
 
+	def display(self):
+		elements = []
+		current = self.head
+		while current.next is not None:
+			current = current.next
+			elements.append(current)
+		return elements
+	
 	def prepend(self, value):
 		new_node = Node(value)
 		previous_first = self.head.next
