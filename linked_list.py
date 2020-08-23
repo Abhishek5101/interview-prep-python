@@ -33,11 +33,35 @@ class LinkedList:
 		current = self.head
 		while current.next is not None:
 			current = current.next
-			elements.append(current)
+			elements.append(current.value)
 		return elements
 	
-	def prepend(self, value):
-		new_node = Node(value)
-		previous_first = self.head.next
-		self.head.next = new_node
-		new_node.next = previous_first
+	def find(self, index):
+		if index > self.length() or index < 0:
+			return None
+		curr_index = 0
+		current = self.head
+		while current.next is not None:
+			current = current.next
+			if curr_index == index:
+				return current.value
+			curr_index += 1
+	
+	def erase(self, index):
+		curr_index = 0
+		current = self.head
+		while current.next is not None:
+			prev = current
+			current = current.next
+			if curr_index == index:
+				prev.next = current.next
+				return current.value
+			curr_index += 1
+		
+
+ll = LinkedList()
+ll.append(1)
+ll.append(2)
+ll.append(3)
+print(ll.erase(0))
+print(ll.display())
