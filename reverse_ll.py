@@ -12,7 +12,7 @@ class Solution:
             current = current.next
             length += 1
         if length%2 == 0:
-            middle =  length//2
+            middle = length//2
         else:
             middle = length//2 + 1
         if middle == 1:
