@@ -29,19 +29,24 @@ class LinkedList:
 		return count
 
 	def display(self):
-		elements = []
+		# elements = []
+		# current = self.head
+		# while current.next is not None:
+		# 	current = current.next
+		# 	elements.append(current.value)
+		# return elements
 		current = self.head
 		while current.next is not None:
 			current = current.next
-			elements.append(current.value)
-		return elements
+			print(current, current.value)
+		return
 	
 	def find(self, index):
 		if index > self.length() or index < 0:
 			return None
 		curr_index = 0
 		current = self.head
-		while current.next is not None:
+		while current:
 			current = current.next
 			if curr_index == index:
 				return current.value
@@ -63,5 +68,5 @@ ll = LinkedList()
 ll.append(1)
 ll.append(2)
 ll.append(3)
-print(ll.erase(0))
-print(ll.display())
+ll.append(4)
+ll.display()
