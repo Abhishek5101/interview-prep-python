@@ -1,2 +1,2 @@
 def candies(n, m):
-    return m - m%n
+    return m - m % n
