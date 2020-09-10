@@ -15,3 +15,15 @@ def twoNumberSum(array, targetSum):
 		elif array[left] + array[right] > targetSum:
 			right -= 1
 	return []
+
+
+def twoNumberSum_comp(array, targetSum):
+	complements = {}
+	for number in array:
+		if targetSum - number in complements:
+			if number < targetSum - number:
+				return [number, targetSum - number]
+			return [targetSum - number, number]
+		else:
+			complements[number] = True
+	return []
