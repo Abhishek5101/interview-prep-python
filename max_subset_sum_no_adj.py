@@ -1,5 +1,6 @@
+"House Robber I "
 class Solution:
-    def rob(self, nums: List[int]) -> int:
+    def rob(self, nums: list[int]) -> int:
         if len(nums) == 0:
             return 0
         elif len(nums) == 1:
