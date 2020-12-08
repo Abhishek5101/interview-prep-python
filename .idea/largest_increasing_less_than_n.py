@@ -29,14 +29,16 @@ def monotoneIncreasingDigits(N: int) -> int:
         if s[i-1] < s[i]:
             # print(s[i-1], s[i])
             pivot = i
-            # print(pivot)
+            # print("pivot: ", pivot)
         elif s[i-1] > s[i]:
-            print(s[i-1], s[i])
+            # print(s[i-1], s[i])
             s[pivot] = str(int(s[pivot])-1)
             print(s[pivot])
+            print("s: ", s)
             s[pivot+1:] = '9'*(len(s)-pivot-1)
             print(s[pivot+1:])
+            print("s: ", s)
             break
     return int(''.join(s))
 
-print(monotoneIncreasingDigits(322))
+print(monotoneIncreasingDigits(576))
