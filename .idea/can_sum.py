@@ -18,7 +18,6 @@ Time: O(m*n)
 Space: O(n)
 """
 def can_sum(target, numbers, memo={}):
-    "Exponential time complexity Brute force approach O(n^m). n==len(array) and m is target"
     if target in memo:
         return memo[target]
     if target == 0:
